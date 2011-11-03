@@ -2,8 +2,8 @@
 Gem::Specification.new do |gem|
   gem.authors       = ["Linus Oleander"]
   gem.email         = ["linus@oleander.nu"]
-  gem.description   = %q{A secure Faye server}
-  gem.summary       = %q{A secure Faye server}
+  gem.description   = %q{A secure Faye server and client}
+  gem.summary       = %q{A secure Faye server and client}
   gem.homepage      = "https://github.com/oleander/secure_faye"
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }

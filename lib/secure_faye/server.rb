@@ -29,7 +29,7 @@ module SecureFaye
       @faye_server.add_extension(SecureFaye::ServerAuth.new)
     end
     
-    def server
+    def instance
       @faye_server
     end
   end
