@@ -4,21 +4,6 @@ module SecureFaye
   require "yaml"
   require "acts_as_chain"
   
-  class Server
-    acts_as_chain :mount, :timeout
-    
-    def initialize
-      @timeout ||= 45
-      @mount ||= "/faye"
-      @faye_server = Faye::RackAdapter.new(mount: @mount, timeout: @timeout)
-      @faye_server.add_extension(::ServerAuth.new)
-    end
-    
-    def start!
-      run @faye_server
-    end
-  end
-    
   class ServerAuth
     def incoming(message, callback)
       minutes = 10
@@ -30,10 +15,23 @@ module SecureFaye
           message["error"] = "Message is older than #{minutes} minute(s)."
         end
       end
-      
-      puts message.to_yaml
-      
+            
       callback.call(message)
+    end
+  end
+  
+  class Server
+    acts_as_chain :mount, :timeout
+    
+    def initialize
+      @timeout ||= 45
+      @mount ||= "/faye"
+      @faye_server = Faye::RackAdapter.new(mount: @mount, timeout: @timeout)
+      @faye_server.add_extension(SecureFaye::ServerAuth.new)
+    end
+    
+    def server
+      @faye_server
     end
   end
 end

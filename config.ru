@@ -3,4 +3,4 @@ unless ENV["FAYE_TOKEN"]
   abort("You must specify a FAYE_TOKEN.")
 end
 
-SecureFaye::Server.new.start!
+run SecureFaye::Server.new.server
