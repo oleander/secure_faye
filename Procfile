@@ -1,0 +1,1 @@
+server: export FAYE_TOKEN=d58e3582afa99040e27b92b13c8f2280 && rackup config.ru -s thin -E production
