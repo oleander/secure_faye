@@ -18,7 +18,7 @@ module SecureFaye
           auth_token: Digest::SHA1.hexdigest([time, @message, @token, @channel].join),
           sent: time
         }
-      }.to_json)
+      }.to_json, timeout: 10)
     end
   end
 end
