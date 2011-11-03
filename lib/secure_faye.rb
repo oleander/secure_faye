@@ -9,6 +9,8 @@ module SecureFaye
   
     def send!
       time = Time.now.to_i
+      @token ||= ENV["FAYE_TOKEN"]
+      
       RestClient.post(@server, message: {
         channel: @channel, 
         data: @message,
