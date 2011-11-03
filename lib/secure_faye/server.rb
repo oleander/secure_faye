@@ -1,7 +1,6 @@
 module SecureFaye
   require "faye"
   require "digest/sha1"
-  require "yaml"
   require "acts_as_chain"
   
   class ServerAuth
