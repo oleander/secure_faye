@@ -36,7 +36,7 @@ If this isn't enough, try Ryan Bate's [Private Pub](https://github.com/ryanb/pri
 *Secure faye* isn't on Rubygems *yet*, but you can easily require it in you Gemfile.
 
 ``` ruby
-gem "secure_faye", git: "git@github.com:oleander/secure_faye.git"
+gem "secure_faye", git: "git://github.com/oleander/secure_faye.git"
 ```
 
 ## Requirements
