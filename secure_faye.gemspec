@@ -12,13 +12,11 @@ Gem::Specification.new do |gem|
   gem.name          = "secure_faye"
   gem.require_paths = ["lib"]
   gem.version       = "0.0.2"
-  
+
   gem.add_dependency("rest-client")
   gem.add_dependency("faye")
   gem.add_dependency("acts_as_chain")
   gem.add_dependency("jsonify")
-  
+
   gem.add_development_dependency("rspec")
-  
-  gem.required_ruby_version = "~> 1.9.0"
 end
